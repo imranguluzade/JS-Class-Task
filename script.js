@@ -6,12 +6,10 @@ class Students {
   }
 
   calculator() {
-    let sumOfPoints = 0;
-    let resultOfAverage;
-    for (let i = 0; i < this.points.length; i++) {
-      sumOfPoints += this.points[i];
-    }
-    resultOfAverage =
+    const sumOfPoints = this.points.reduce(function (accmulator, current) {
+      return accmulator + current;
+    }, 0);
+    const resultOfAverage =
       (sumOfPoints + this.finalPoint) / (this.points.length + 1);
     return resultOfAverage;
   }
