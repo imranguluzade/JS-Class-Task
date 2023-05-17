@@ -1,24 +1,24 @@
 class Students {
   constructor(student, points, finalPoint) {
-    this.student = student;
-    this.points = points;
-    this.finalPoint = finalPoint;
+    this._student = student;
+    this._points = points;
+    this._finalPoint = finalPoint;
   }
 
-  calculator() {
-    const sumOfPoints = this.points.reduce(function (accmulator, current) {
+  _calculator() {
+    const sumOfPoints = this._points.reduce(function (accmulator, current) {
       return accmulator + current;
     }, 0);
     const resultOfAverage =
-      (sumOfPoints + this.finalPoint) / (this.points.length + 1);
+      (sumOfPoints + this.finalPoint) / (this._points.length + 1);
     return resultOfAverage;
   }
   showActivity() {
-    const resultOfAverage = this.calculator();
+    const resultOfAverage = this._calculator();
     if (resultOfAverage > 70) {
-      return `Tələbənin adı:${this.student}; Qiymətləri ${this.points}; Final Qiyməti: ${this.finalPoint} Status: Keçib`;
+      return `Tələbənin adı:${this._student}; Qiymətləri ${this._points}; Final Qiyməti: ${this._finalPoint} Status: Keçib`;
     } else {
-      return `Tələbənin adı:${this.student}; Qiymətləri ${this.points}; Final Qiyməti: ${this.finalPoint} Status: Kəsilib`;
+      return `Tələbənin adı:${this._student}; Qiymətləri ${this._points}; Final Qiyməti: ${this._finalPoint} Status: Kəsilib`;
     }
   }
 }
